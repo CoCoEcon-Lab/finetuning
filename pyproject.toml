@@ -5,3 +5,9 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []
+
+[dependency-groups]
+dev = [
+    "nbstripout>=0.9.1",
+    "pre-commit>=4.5.1",
+]
