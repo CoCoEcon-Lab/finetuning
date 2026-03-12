@@ -4,7 +4,7 @@ All workshop exercises run on **$\geq$ 16 GB NVIDIA GPUs**, so the training conf
 
 For the fine-tuning exercises we will use:
 
-Model: [**HuggingFaceTB/SmolLM-360M-Instruct**](https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct)
+Model: [**HuggingFaceTB/SmolLM2-360M-Instruct**](https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct)
 
 This model was chosen because it runs reliably on 16 GB GPUs while still allowing meaningful experimentation with fine-tuning hyperparameter settings (rank, batching geometry, target layers)
 
