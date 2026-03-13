@@ -54,7 +54,5 @@ htmlcov/
 *.local
 
 # Project specific
-models/**
-!models/.gitkeep
-data/**
-!data/.gitkeep
+hf/**
+!hf/.gitkeep

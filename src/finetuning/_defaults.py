@@ -10,18 +10,12 @@ from dataclasses import dataclass
 ROOT_DIR = Path(__file__).parents[2]
 
 @dataclass(frozen=True)
-class ModelDefaults:
+class WorkshopDefaults:
     """Defaults for LLM configuration."""
 
     model = 'HuggingFaceTB/SmolLM2-360M-Instruct'
-    model_dir = ROOT_DIR / 'models'
+    dataset = 'fingriffin/natural-questions-corporate-jargon'
 
-MODEL_DEFAULTS: ModelDefaults = ModelDefaults()
+    hf_dir = ROOT_DIR / 'hf'
 
-class DataDefaults:
-    """Defaults for dataset configuration."""
-
-    dataset = '' # TODO: choose dataset
-    data_dir = ROOT_DIR / 'data'
-
-DATA_DEFAULTS = DataDefaults()
+WORKSHOP_DEFAULTS: WorkshopDefaults = WorkshopDefaults()
