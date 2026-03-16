@@ -5,6 +5,7 @@ Utilities for fine-tuning workshop.
 """
 
 import os
+import datasets
 from finetuning._defaults import WORKSHOP_DEFAULTS
 
 def setup_hf() -> None:
@@ -15,3 +16,7 @@ def setup_hf() -> None:
     os.environ["HF_HUB_CACHE"] = str(WORKSHOP_DEFAULTS.hf_dir)
     os.environ["TRANSFORMERS_CACHE"] = str(WORKSHOP_DEFAULTS.hf_dir)
     os.environ["HF_DATASETS_CACHE"] = str(WORKSHOP_DEFAULTS.hf_dir)
+
+def get_system_prompt(ds: datasets.Dataset) -> str:
+    """Get system prompt from a dataset."""
+    return ds["train"]["messages"][0][0]["content"]
