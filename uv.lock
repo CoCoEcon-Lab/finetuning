@@ -580,6 +580,7 @@ dependencies = [
     { name = "ipywidgets" },
     { name = "jupyter" },
     { name = "openai" },
+    { name = "pydantic" },
     { name = "transformers" },
 ]
 
@@ -596,6 +597,7 @@ requires-dist = [
     { name = "ipywidgets", specifier = ">=8.1.8" },
     { name = "jupyter", specifier = ">=1.1.1" },
     { name = "openai", specifier = ">=2.26.0" },
+    { name = "pydantic", specifier = ">=2.12.5" },
     { name = "transformers", specifier = ">=5.3.0" },
 ]
 

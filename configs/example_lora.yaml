@@ -1,0 +1,27 @@
+# Example configuration file for LoRA fine-tuning
+# Safe limits for hyperparameters are imposed at validation in notebooks/lora.ipynb
+
+# Basic hyperparameters
+num_epochs: 1 # Allowed range: [1, 3]
+learning_rate: 1e-5 # Allowed range: [0, ∞]
+
+# LoRA hyperparameters
+lora_rank: 32 # Allowed range: [1, 32]
+lora_alpha: 8 # Allowed range: [1, ∞]
+
+# Batch geometry
+# Global batch size = micro_batch_size * gradient_accumulation_steps
+# Allowed range for global batch size: [1, 4]
+micro_batch_size: 2
+gradient_accumulation_steps: 2
+
+# Target layers
+# Allowed layers:
+#   Attention: any from [q_proj, k_proj, v_proj, o_proj]
+#   MLP: any from [gate_proj, up_proj, down_proj]
+# Example (attention only)
+target_layers:
+  - q_proj
+  - k_proj
+  - v_proj
+  - o_proj
