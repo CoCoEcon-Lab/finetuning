@@ -1,11 +1,9 @@
 repos:
-  # Notebook metadata cleanup, but keep outputs
   - repo: https://github.com/kynan/nbstripout
     rev: 0.8.2
     hooks:
       - id: nbstripout
         files: ^notebooks/.*\.ipynb$
         args:
-          - --keep-output
           - --extra-keys
           - metadata.kernelspec metadata.language_info
