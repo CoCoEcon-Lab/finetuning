@@ -31,9 +31,16 @@ jobs:
             echo "tag=test" >> $GITHUB_OUTPUT
           fi
 
+      - name: Set lowercase image name
+        id: repo
+        run: echo "repo=$(echo '${{ github.repository }}' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_OUTPUT
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ github.repository }}:${{ steps.vars.outputs.tag }}
+          tags: ghcr.io/${{ steps.repo.outputs.repo }}:${{ steps.vars.outputs.tag }}
