@@ -18,8 +18,12 @@ class WorkshopDefaults:
 
     hf_dir = ROOT_DIR / 'hf'
 
+    max_prompt_length = 1024
     max_new_tokens = 256
     temperature = 0.7
     do_sample = True
+
+    dpo_train_size = 256
+    dpo_test_size = 64
 
 WORKSHOP_DEFAULTS: WorkshopDefaults = WorkshopDefaults()

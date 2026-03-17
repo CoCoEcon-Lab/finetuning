@@ -58,3 +58,4 @@ hf/**
 !hf/.gitkeep
 configs/**
 !configs/example_lora.yaml
+!configs/example_dpo.yaml
