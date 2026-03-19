@@ -1,25 +1,18 @@
-## Model and Training Limits
+# Fine-tuning LLMs - D200: Machine Learning in Economics
 
-All workshop exercises run on **$\geq$ 16 GB NVIDIA GPUs**, so the training configuration must fit comfortably within this memory budget.
+This repository contains the **hands-on notebooks** used in the D200 course for fine-tuning LLMs.
 
-For the fine-tuning exercises we will use:
+- **Slides**: [`docs/slides/`](docs/slides)
+- **Notebooks**: [`notebooks/`](notebooks)
+- **Solutions**: [`notebooks/solutions/`](notebooks/solutions)
 
-Model: [**HuggingFaceTB/SmolLM2-360M-Instruct**](https://huggingface.co/HuggingFaceTB/SmolLM2-360M-Instruct)
+The exercises focus on fine-tuning techniques (LoRA, DPO) using lightweight models that run on standard GPUs.
 
-This model was chosen because it runs reliably on 16 GB GPUs while still allowing meaningful experimentation with fine-tuning hyperparameter settings (rank, batching geometry, target layers)
+## Setup Notes
 
-### Allowed configurations
+All exercises are designed to run on **≥16GB NVIDIA GPUs**, with constrained configurations to ensure reliability.
 
-For **LoRA** fine-tuning, you are free to use:
+## Usage
 
-- **LoRA rank:** $2-32$
-- **Target layers:** attention, MLP or both
-- **Global batch size:** $\leq 4$
-
-For **RL** fine-tuning, you are free to use:
-
-- TODO!
-
-*(Global batch size = `micro_batch_size × gradient_accumulation_steps`)*
-
-This setup keeps GPU memory usage safely within limits while still giving you flexibility to explore different LoRA configurations.
+Work through the notebooks in order.  
+Try implementing each section yourself before checking the solutions.
